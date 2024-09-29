@@ -1,11 +1,13 @@
 import React from 'react';
 import { range } from '../../utils';
+import { checkGuess } from '../../game-helpers';
 
 
-function Guess({checkLetter}) {
+function Guess({word, answer}) {
+  let result = checkGuess(word, answer)
   return  (
   <p className="guess">
-    {range(0, 5, 1).map((i) => <span className={`cell ${checkLetter && checkLetter[i].status}`} key={crypto.randomUUID()}>{checkLetter && checkLetter[i].letter}</span>)}
+    {range(5).map((i) => <span className={`cell ${result ? result[i].status : undefined}`} key={i}>{result ? result[i].letter : undefined}</span>)}
   </p>
 );
 }
