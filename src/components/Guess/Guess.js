@@ -2,10 +2,10 @@ import React from 'react';
 import { range } from '../../utils';
 
 
-function Guess({word=''}) {
+function Guess({checkLetter}) {
   return  (
   <p className="guess">
-    {range(0, 5, 1).map((i) => <span className="cell" key={Math.random()}>{word[i]}</span>)}
+    {range(0, 5, 1).map((i) => <span className={`cell ${checkLetter && checkLetter[i].status}`} key={crypto.randomUUID()}>{checkLetter && checkLetter[i].letter}</span>)}
   </p>
 );
 }
