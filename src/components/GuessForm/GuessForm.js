@@ -22,7 +22,7 @@ function GuessForm({handleSubmitForm, numGuesses}) {
     <input id="guess-input" type='text' 
       minLength={5}
       maxLength={5}
-      disabled={numGuesses == NUM_OF_GUESSES_ALLOWED}
+      disabled={numGuesses === NUM_OF_GUESSES_ALLOWED}
       value={guess}
       onChange={(event) => { setGuess(event.target.value.toUpperCase())} }
     />

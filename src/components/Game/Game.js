@@ -17,7 +17,7 @@ function Game() {
   const [game, setGame] = React.useState("play");
 
   const handleSubmitForm = (word) => {
-    if (words.length == NUM_OF_GUESSES_ALLOWED) {
+    if (words.length === NUM_OF_GUESSES_ALLOWED) {
       window.alert("Max tries " + NUM_OF_GUESSES_ALLOWED);
       return;
     }
@@ -27,7 +27,7 @@ function Game() {
 
     if (word === answer) {
       setGame("win");
-    } else if (nextWords.length == NUM_OF_GUESSES_ALLOWED) {
+    } else if (nextWords.length === NUM_OF_GUESSES_ALLOWED) {
       setGame("lose");
     }
   };
